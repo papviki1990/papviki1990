@@ -82,6 +82,8 @@ public class Controllstructures : MonoBehaviour
         for (int j = 100; j > 0; j--)
         {
             Debug.Log(j * j);
+       
+
         }
 
         int k = 1;
