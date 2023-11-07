@@ -2,8 +2,9 @@ using UnityEngine;
 
 class PlayerMover : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float angularSpeed;
+    [SerializeField] float speed = 10;
+    [SerializeField] float angularSpeed = 360;
+    [SerializeField] Transform cameraTransform;
 
     void Update()
     {
@@ -17,7 +18,13 @@ class PlayerMover : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-        Vector3 inputVector = new Vector3(x,0,z);
+        // Vector3 inputVector = new Vector3(x,0,z);
+
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
+
+        Vector3 inputVector = x * cameraRight + z * cameraForward;
+        inputVector.y = 0;
        
         if (inputVector != Vector3.zero)
         {
