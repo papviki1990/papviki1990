@@ -6,8 +6,19 @@ class PlayerMover : MonoBehaviour
     [SerializeField] float angularSpeed = 360;
     [SerializeField] Transform cameraTransform;
 
+    [SerializeField] Damageable damageable;
+
+    private void OnValidate()
+    {
+        if (damageable == null)
+            damageable = GetComponent<Damageable>();
+    }
+
     void Update()
     {
+        bool isDead = damageable.GetCurrentHealth() <= 0;
+        if (isDead) return;
+
         // Transform t = transform;
 
         // t.position = new Vector3(0, 10, 0);
