@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Homework3 : MonoBehaviour
@@ -12,6 +13,13 @@ public class Homework3 : MonoBehaviour
     [SerializeField] int number4;
     [SerializeField] string sequence;
 
+     void Start()
+    {
+        //  PrintPrimes(100);
+
+        int x = LeastCommonMultiple(4, 5);
+        Debug.Log(x);
+    }
 
     void OnValidate()
     {
@@ -71,7 +79,9 @@ public class Homework3 : MonoBehaviour
 
     bool IsPrime(int number)
     {
-        for (int i = 2; i < number / 2; i++)
+        number = Mathf.Abs(number);
+
+        for (int i = 2; i <= number / 2; i++)
         {
             bool isDivisible = number % i == 0;
             if (isDivisible)
@@ -91,4 +101,44 @@ public class Homework3 : MonoBehaviour
         }
         return s;
     }
+    void PrintPrimes(int number)
+    {
+        int primesFound = 0;
+        for (int i = 2; primesFound < number; i++)
+        {
+            bool isPrime = IsPrime(i);
+            if (isPrime)
+            {
+                Debug.Log(i);
+                primesFound++;
+            }
+        }
+    }
+
+    int LeastCommonMultiple(int a, int b)
+    {
+        int max = Mathf.Max(a, b);
+
+        for (int i = max; i < 10000 ; i++)
+        {
+            bool d1 = i % a == 0;
+            bool d2 = i % b == 0;
+
+            if (d1 && d2)
+                return i;
+        }
+
+        return -1;
+    }
+
+    float Distance(Vector2 a, Vector2 b)
+    {
+        Vector2 c = a - b;
+        return c.magnitude;
+    }
+
+
 }
+
+
+
