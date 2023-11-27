@@ -13,6 +13,8 @@ public class RocketController : MonoBehaviour
         Vector3 selfPosition = transform.position;
         Vector3 targetPosition = target.position;
 
+      
+
 
         Vector3 directionVector = targetPosition - selfPosition;
 
