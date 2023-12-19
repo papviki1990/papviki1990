@@ -8,6 +8,9 @@ public class ArrayPractice : MonoBehaviour
     [SerializeField] int indexOfSearched;
     [SerializeField] string[] reversed;
 
+    [SerializeField] int fibonacciCount;
+    [SerializeField] int[] fibonacciNumbers;
+
     private void OnValidate()
     {
         indexOfSearched = GetIndex(strings1, searched);
@@ -19,6 +22,8 @@ public class ArrayPractice : MonoBehaviour
         Array.Reverse(reversed);
 
         Array.Sort(reversed);  // Sorba rakás
+
+        fibonacciNumbers = GetFibonacci(fibonacciCount);
 
     }
     int GetIndex(string[] array, string searchfor)
@@ -108,4 +113,68 @@ public class ArrayPractice : MonoBehaviour
 
     }
 
+    float Min(float[] array)
+    {
+        float min = float.MaxValue;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[1] < min)
+                min = array[1];
+
+        }
+        return min;
+    }
+
+    float max(float[] array)
+    {
+        float max = float.MinValue;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[1] < max)
+                max = array[1];
+
+        }
+        return max;
+    }
+
+    /*float Min(params float[] array)
+    {
+        float min = float.MaxValue;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] < min)
+                min = array[i];
+        }
+        return min;
+    }
+
+    float Max(params float[] array)
+    {
+        float max = float.MinValue;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] > max)
+                max = array[i];
+        }
+        return max;
+    }*/
+
+    int[] GetFibonacci(int count)
+    {
+        int[] fib = new int[count];
+
+        if (count > 0)
+            fib[0] = 0;
+
+        if(count > 1)
+            fib[1] = 1;
+
+
+        for (int i = 0; i < count; i++)
+        {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        return fib;
+    }
 }

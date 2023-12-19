@@ -3,6 +3,7 @@ using UnityEngine;
 class RayCaster : MonoBehaviour
 {
     [SerializeField] Transform courser3D;
+    [SerializeField] ParticleSystem visualEffect;
     [SerializeField] float explosionRange = 10;
     [SerializeField] float explosionMaxForce = 100;
 
@@ -26,6 +27,7 @@ class RayCaster : MonoBehaviour
 
     void Explode(Vector3 position)
     {
+        visualEffect.Play();
         Rigidbody[] allRigidBodies = FindObjectsOfType<Rigidbody>();
         foreach (Rigidbody rb in allRigidBodies)
         {
