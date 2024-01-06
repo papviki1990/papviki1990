@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 
 {
-    [SerializeField] PlayerMovement movement;
+    [SerializeField] CarMovement movement;
 
   void OnCollisionEnter (Collision collisionInfo)
     {

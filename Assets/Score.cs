@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public Transform player;
-    public Text scoreText;
+     [SerializeField] Transform player;
+     [SerializeField] TMP_Text scoreText;
 
     // Update is called once per frame
     void Update()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class PlayerMovement : MonoBehaviour
+class CarMovement : MonoBehaviour
 
     
 {
