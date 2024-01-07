@@ -11,7 +11,7 @@ class PlayerCar : MonoBehaviour
 
     
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
