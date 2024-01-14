@@ -1,29 +1,21 @@
 using UnityEngine;
 
-class PlayerCar : MonoBehaviour
-
-    
+public class CarMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
-
     [SerializeField] float forwardForce = 2000f;
     [SerializeField] float sidewaysForce = 500f;
 
-    
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        rb.AddForce(0, 0, forwardForce * Time.fixedDeltaTime);
 
-        if (Input.GetKeyDown("d"))
+        float horizontalInput = Input.GetAxis("Horizontal");
+        rb.AddForce(horizontalInput * sidewaysForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
+
+        if (rb.position.y < -1f)
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            FindObjectOfType<CarGameManager>().EndGame();
         }
-
-        if (Input.GetKeyDown("a"))
-        {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
-
     }
 }

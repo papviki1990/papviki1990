@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class GameScore : MonoBehaviour
+public class Score : MonoBehaviour
 {
      [SerializeField] Transform player;
      [SerializeField] TMP_Text scoreText;
