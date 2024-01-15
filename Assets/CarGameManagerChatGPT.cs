@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CarGameManager : MonoBehaviour
+public class CarGameManagerChatGPT : MonoBehaviour
 {
     void Update()
     {

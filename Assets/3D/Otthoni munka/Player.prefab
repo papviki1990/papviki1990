@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 5221576336640990674}
-  gameManager: {fileID: 0}
 --- !u!114 &5221576336640990674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 467482578845588700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02a04ecb5332e6349b32e6dcf9736909, type: 3}
+  m_Script: {fileID: 11500000, guid: 333bbb0616423204fa0df1dae9d805a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2733953260302378410}
