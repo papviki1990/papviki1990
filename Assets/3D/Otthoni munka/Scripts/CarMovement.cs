@@ -16,6 +16,16 @@ public class CarMovement : MonoBehaviour
         if (rb.position.y < -1f)
         {
             FindObjectOfType<CarGameManager>().EndGame();
+            Destroy(this);
+        }
+    }
+
+    void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.collider.tag == "Finish")
+        {
+            FindObjectOfType<CarGameManager>().Winner();
+            Destroy(this);
         }
     }
 }

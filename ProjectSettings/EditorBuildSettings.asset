@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/3D/Otthoni munka/Car racing.unity
+    guid: e5ed5c8f32920aa40833286ecda6c578
   m_configObjects: {}
